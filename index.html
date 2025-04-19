@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slideshow Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .slideshow {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    .github-button {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .github-button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://github.com/dseeva" class="github-button" target="_blank">GitHub</a>
+
+  <div class="slideshow">
+    <img src="/var/www/main/image1.jpeg" class="active" />
+    <img src="/var/www/main/image2.jpeg" />
+    <img src="/var/www/main/image3.jpeg" />
+    <img src="/var/www/main/image4.jpeg" />
+    <img src="/var/www/main/image5.jpeg" />
+    <img src="/var/www/main/image6.jpeg" />
+    <img src="/var/www/main/image7.jpeg" />
+    <img src="/var/www/main/image8.jpeg" />
+    <img src="/var/www/main/image9.jpeg" />
+    <img src="/var/www/main/image10.jpeg" />
+    <img src="/var/www/main/image11.jpeg" />
+    <!-- Add more images as needed -->
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.slideshow img');
+    let index = 0;
+
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 10000); // Change slide every 5 seconds
+  </script>
+
+</body>
+</html>
