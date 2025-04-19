@@ -51,6 +51,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 12px;
+      padding: 0 16px;
     }
 
     .top-bar {
@@ -61,7 +63,7 @@
       bottom: 0;
     }
 
-    /* GitHub button */
+    /* GitHub button (default style) */
     .github-button {
       background: rgba(255, 255, 255, 0.1);
       color: white;
@@ -78,6 +80,22 @@
       color: black;
     }
 
+    /* Prominent Matthew button */
+    .github-button.matthew {
+      background-color: #e63946;
+      border: none;
+      font-weight: bold;
+      box-shadow: 0 0 8px rgba(230, 57, 70, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .github-button.matthew:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(230, 57, 70, 0.9);
+      background-color: #ff5a5f;
+      color: white;
+    }
+
     @media (max-width: 600px) {
       .top-bar, .bottom-bar {
         height: 50px;
@@ -92,9 +110,10 @@
 </head>
 <body>
 
-  <!-- Top black bar with GitHub button -->
+  <!-- Top black bar with GitHub and Matthew buttons -->
   <div class="top-bar">
     <a href="https://github.com/dseeva" class="github-button" target="_blank">GitHub</a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="github-button matthew" target="_blank">Hi Matthew</a>
   </div>
 
   <!-- Bottom black bar (empty but visible) -->
