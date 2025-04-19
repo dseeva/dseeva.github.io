@@ -17,7 +17,7 @@
       font-family: sans-serif;
     }
 
-    /* Slideshow */
+    /* Slideshow container */
     .slideshow {
       position: fixed;
       top: 0;
@@ -27,17 +27,22 @@
       z-index: 0;
     }
 
+    /* Fancy transitioning slideshow images */
     .slideshow img {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transform: scale(1.05);
+      transition: opacity 1.5s ease-in-out, transform 3s ease-in-out;
+      will-change: opacity, transform;
     }
 
     .slideshow img.active {
       opacity: 1;
+      transform: scale(1);
+      z-index: 1;
     }
 
     /* Top and bottom bars */
@@ -63,7 +68,7 @@
       bottom: 0;
     }
 
-    /* GitHub button (default style) */
+    /* GitHub button */
     .github-button {
       background: rgba(255, 255, 255, 0.1);
       color: white;
@@ -80,7 +85,7 @@
       color: black;
     }
 
-    /* Prominent Matthew button */
+    /* Matthew button (highlighted) */
     .github-button.matthew {
       background-color: #e63946;
       border: none;
@@ -110,15 +115,16 @@
 </head>
 <body>
 
-  <!-- Top black bar with GitHub and Matthew buttons -->
+  <!-- Top bar with buttons -->
   <div class="top-bar">
     <a href="https://github.com/dseeva" class="github-button" target="_blank">GitHub</a>
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="github-button matthew" target="_blank">Hi Matthew</a>
   </div>
 
-  <!-- Bottom black bar (empty but visible) -->
+  <!-- Bottom bar (empty) -->
   <div class="bottom-bar"></div>
 
+  <!-- Slideshow -->
   <div class="slideshow">
     <img src="https://1drv.ms/i/c/fec3293efeb40311/IQRH9jlYTeYiRZUJF86jcMZNAUD1ulHCEgIeXvm-ZcQrsQc?width=2048&height=1536" class="active" />
     <img src="https://1drv.ms/i/c/fec3293efeb40311/IQQuPbf42QwtQZhuXelWx-snAQTg5C4fkJh9HXo6C9-_QuQ?width=1024" />
